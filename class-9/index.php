@@ -21,6 +21,9 @@
                 $msg = "Login Successfull";
                 $_SESSION['user'] = $un;
                 $_SESSION['login_status'] = true;
+
+                setcookie("UserName", $un, time() + 20, '/');
+                setcookie("status", $un, time() + 20, '/');
                 // header("location:dashboard.php");
                 header("refresh:1;url=dashboard.php");
             } else {
